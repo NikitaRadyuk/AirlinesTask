@@ -9,7 +9,7 @@ public class AircraftDaoFactory {
     private AircraftDaoFactory(){
     }
 
-    public IAircraftDao getInstance(){
+    public static IAircraftDao getInstance(){
         if (instance == null) {
             synchronized (AircraftDaoFactory.class){
                 if (instance == null){

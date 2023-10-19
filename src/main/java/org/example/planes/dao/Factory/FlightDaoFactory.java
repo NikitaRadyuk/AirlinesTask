@@ -9,7 +9,7 @@ public class FlightDaoFactory {
     private FlightDaoFactory(){
     }
 
-    public IFlightDao getInstance(){
+    public static IFlightDao getInstance(){
         if (instance == null) {
             synchronized (FlightDaoFactory.class){
                 if (instance == null){

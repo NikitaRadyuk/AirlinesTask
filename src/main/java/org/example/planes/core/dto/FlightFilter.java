@@ -1,18 +1,19 @@
 package org.example.planes.core.dto;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
 public class FlightFilter {
-    private OffsetDateTime scheduledDeparture;
-    private OffsetDateTime scheduledArrival;
+    private LocalDate scheduledDeparture;
+    private LocalDate scheduledArrival;
     private String departureAirport;
     private String arrivalAirport;
     private String status;
 
     public FlightFilter(){}
 
-    public FlightFilter(OffsetDateTime scheduledDeparture, OffsetDateTime scheduledArrival, String departureAirport, String arrivalAirport, String status) {
+    public FlightFilter(LocalDate scheduledDeparture, LocalDate scheduledArrival, String departureAirport, String arrivalAirport, String status) {
         this.scheduledDeparture = scheduledDeparture;
         this.scheduledArrival = scheduledArrival;
         this.departureAirport = departureAirport;
@@ -20,19 +21,19 @@ public class FlightFilter {
         this.status = status;
     }
 
-    public OffsetDateTime getScheduledDeparture() {
+    public LocalDate getScheduledDeparture() {
         return scheduledDeparture;
     }
 
-    public void setScheduledDeparture(OffsetDateTime scheduledDeparture) {
+    public void setScheduledDeparture(LocalDate scheduledDeparture) {
         this.scheduledDeparture = scheduledDeparture;
     }
 
-    public OffsetDateTime getScheduledArrival() {
+    public LocalDate getScheduledArrival() {
         return scheduledArrival;
     }
 
-    public void setScheduledArrival(OffsetDateTime scheduledArrival) {
+    public void setScheduledArrival(LocalDate scheduledArrival) {
         this.scheduledArrival = scheduledArrival;
     }
 
