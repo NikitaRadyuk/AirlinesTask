@@ -26,7 +26,7 @@
       <td>${item.airportCode}</td>
       <td>${item.airportName}</td>
       <td>${item.city}</td>
-      <td>${item.coordinates}</td>
+      <td>${item.point}</td>
       <td>${item.timezone}</td>
     </tr>
   </c:forEach>

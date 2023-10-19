@@ -25,7 +25,7 @@ public class AirportDao implements IAirportDao {
         try(
                 Connection connection = dataSource.getConnection();
                 PreparedStatement st = connection.prepareStatement(GET_ALL_AIRPORTS);
-                ResultSet rs = st.getResultSet();
+                ResultSet rs = st.executeQuery();
                 ) {
             while(rs.next()){
                 Airport airport = new Airport();

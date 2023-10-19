@@ -29,6 +29,19 @@ public class Flight {
         this.aircraftCode = aircraftCode;
     }
 
+    public Flight(int flightId, String flightNo, OffsetDateTime scheduledDeparture, OffsetDateTime scheduledArrival, String departureAirport, String arrivalAirport, String status, String aircraftCode, OffsetDateTime actualDeparture, OffsetDateTime actualArrival) {
+        this.flightId = flightId;
+        this.flightNo = flightNo;
+        this.scheduledDeparture = scheduledDeparture;
+        this.scheduledArrival = scheduledArrival;
+        this.departureAirport = departureAirport;
+        this.arrivalAirport = arrivalAirport;
+        this.status = status;
+        this.aircraftCode = aircraftCode;
+        this.actualDeparture = actualDeparture;
+        this.actualArrival = actualArrival;
+    }
+
     public int getFlightId() {
         return flightId;
     }

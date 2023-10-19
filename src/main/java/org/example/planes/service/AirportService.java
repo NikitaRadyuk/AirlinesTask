@@ -16,7 +16,11 @@ public class AirportService implements IAirportService {
 
     @Override
     public List<Airport> getAll() {
-        return airportDao.getAll().stream().map(airportEntity -> new Airport(airportEntity.getAirportCode(), airportEntity.getAirportName(), airportEntity.getCity(),
-                airportEntity.getPoint(), airportEntity.getTimezone())).collect(Collectors.toList());
+        return airportDao.getAll().stream().map(airportEntity -> new Airport(
+                airportEntity.getAirportCode(),
+                airportEntity.getAirportName(),
+                airportEntity.getCity(),
+                airportEntity.getPoint(),
+                airportEntity.getTimezone())).collect(Collectors.toList());
     }
 }

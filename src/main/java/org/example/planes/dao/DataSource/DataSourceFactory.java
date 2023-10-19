@@ -3,15 +3,14 @@ package org.example.planes.dao.DataSource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
+import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 
 public class DataSourceFactory {
-    private static DataSourceFactory instance;
-    private ComboPooledDataSource ds;
+    private static ComboPooledDataSource ds;
 
-    public DataSourceFactory() {
+    static {
         ds = new ComboPooledDataSource();
-
         try {
             ds.setDriverClass("org.postgresql.Driver");
         } catch (PropertyVetoException e) {
@@ -21,12 +20,7 @@ public class DataSourceFactory {
         ds.setUser("postgres");
         ds.setPassword("12345678");
     }
-    public static ComboPooledDataSource getInstance(){
-        if(instance == null){
-            synchronized (DataSourceFactory.class){
-                instance = new DataSourceFactory();
-            }
-        }
-        return instance.ds;
+    public static DataSource getInstance(){
+        return ds;
     }
 }

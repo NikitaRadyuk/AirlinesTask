@@ -16,7 +16,9 @@ public class AircraftService implements IAircraftService {
 
     @Override
     public List<Aircraft> getAll() {
-        return aircraftDao.getAll().stream().map(aircraftEntity -> new Aircraft(aircraftEntity.getAircraftCode(),
-                aircraftEntity.getModel(), aircraftEntity.getRange())).collect(Collectors.toList());
+        return aircraftDao.getAll().stream().map(aircraftEntity -> new Aircraft(
+                aircraftEntity.getAircraftCode(),
+                aircraftEntity.getModel(),
+                aircraftEntity.getRange())).collect(Collectors.toList());
     }
 }
