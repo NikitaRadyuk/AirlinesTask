@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="aircraftDao"
+          class="org.example.planes.dao.AircraftDao">
+        <constructor-arg name="emf" ref="emf"/>
+    </bean>
+
+    <bean id="emf"
+          class="org.example.planes.dao.DataSource.EMFFactory"
+          factory-method="getInstance" >
+    </bean>
+
+    <bean id="dataSource"
+          class="org.example.planes.dao.DataSource.DataSourceFactory"
+          factory-method="getInstance" >
+    </bean>
+
+    <bean id="airportDao"
+          class="org.example.planes.dao.AirportDao">
+        <constructor-arg name="emf" ref="emf"/>
+    </bean>
+
+    <bean id="flightDao"
+          class="org.example.planes.dao.FlightDao">
+        <constructor-arg name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="aircraftService"
+          class="org.example.planes.service.AircraftService">
+        <constructor-arg name="aircraftDao" ref="aircraftDao"/>
+    </bean>
+
+    <bean id="airportService"
+          class="org.example.planes.service.AirportService">
+        <constructor-arg name="airportDao" ref="airportDao"/>
+    </bean>
+
+    <bean id="flightService"
+          class="org.example.planes.service.FlightService">
+        <constructor-arg name="dao" ref="flightDao"/>
+    </bean>
+</beans>

@@ -20,7 +20,7 @@ public class AirportService implements IAirportService {
                 airportEntity.getAirportCode(),
                 airportEntity.getAirportName(),
                 airportEntity.getCity(),
-                airportEntity.getPoint(),
+                airportEntity.getCoordinates(),
                 airportEntity.getTimezone())).collect(Collectors.toList());
     }
 }

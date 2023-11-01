@@ -5,13 +5,13 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-    <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="planes" transaction-type="RESOURCE_LOCAL">
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/demo" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://db:5432/demo" />
             <property name="javax.persistence.jdbc.user" value="postgres" />
-            <property name="javax.persistence.jdbc.password" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="12345678" />
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.show_sql" value="true" />

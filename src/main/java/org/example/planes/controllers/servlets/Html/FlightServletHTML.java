@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.example.planes.core.dto.Flight;
 import org.example.planes.core.dto.FlightFilter;
 import org.example.planes.core.dto.Pageable;
+import org.example.planes.core.factory.AppContextFactory;
 import org.example.planes.service.api.IFlightService;
-import org.example.planes.service.factory.FlightServiceFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -32,7 +32,7 @@ public class FlightServletHTML extends HttpServlet {
     private final IFlightService service;
 
     public FlightServletHTML() {
-        this.service = FlightServiceFactory.getInstance();
+        this.service = AppContextFactory.getBean(IFlightService.class);
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
