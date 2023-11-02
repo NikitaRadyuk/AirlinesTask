@@ -1,4 +1,4 @@
-FROM tomcat:10.1.15-jre17-temurin-jammy
+FROM tomcat:10.1.15-jre21-temurin-jammy
 
 COPY target/planes-app#1.0.war /usr/local/tomcat/webapps/airport.war
 

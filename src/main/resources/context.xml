@@ -4,11 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 		https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="aircraftDao"
-          class="org.example.planes.dao.AircraftDao">
-        <constructor-arg name="emf" ref="emf"/>
-    </bean>
-
     <bean id="emf"
           class="org.example.planes.dao.DataSource.EMFFactory"
           factory-method="getInstance" >
@@ -17,6 +12,11 @@
     <bean id="dataSource"
           class="org.example.planes.dao.DataSource.DataSourceFactory"
           factory-method="getInstance" >
+    </bean>
+
+    <bean id="aircraftDao"
+          class="org.example.planes.dao.AircraftDao">
+        <constructor-arg name="emf" ref="emf"/>
     </bean>
 
     <bean id="airportDao"

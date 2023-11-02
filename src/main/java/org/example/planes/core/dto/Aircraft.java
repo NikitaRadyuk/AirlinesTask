@@ -1,6 +1,5 @@
 package org.example.planes.core.dto;
 
-
 import java.util.Objects;
 
 public class Aircraft {

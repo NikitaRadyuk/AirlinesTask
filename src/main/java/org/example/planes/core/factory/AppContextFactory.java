@@ -7,8 +7,7 @@ public class AppContextFactory {
     private static final ApplicationContext context;
 
     static {
-        context =
-                new ClassPathXmlApplicationContext("context.xml");
+        context = new ClassPathXmlApplicationContext("context.xml");
     }
 
     public static  <T> T getBean(Class<T> type){

@@ -7,7 +7,7 @@ public class EMFFactory {
     private final static EntityManagerFactory instance;
 
     static{
-        instance = Persistence.createEntityManagerFactory("planes");
+        instance = Persistence.createEntityManagerFactory("test");
     }
 
     public static EntityManagerFactory getInstance(){
